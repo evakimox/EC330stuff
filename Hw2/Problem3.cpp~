@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+int Sum(int *nums, int len){
+  int sum,tempsum;
+  int i,j,k;
+  for(i=0;i<len;i++){
+    tempsum = nums[i];
+    cout<<"temp: "<<tempsum<<'\n';
+  }
+  return 1;
+}
+
+
+int main(){
+  int we[10]={1,2,3,4,5,6,7,8,9,0};
+  int er = Sum;
+}
