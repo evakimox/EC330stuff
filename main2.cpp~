@@ -1,0 +1,6 @@
+#include "Problem3a.h"
+
+using namespace std;
+int main(){
+  return 0;
+}  

@@ -1,0 +1,11 @@
+#include "Problem3a.h"
+
+using namespace std;
+
+int main(){
+  omniCell<int> num1(15);
+  omniCell<string> str2("hahaa");
+  cout<<"num 1 is: "<< num1.read()<<'\n';
+  cout<<"str 2 is: "<< str2.read()<<'\n';
+  return 0;
+}

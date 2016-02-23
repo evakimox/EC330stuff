@@ -1,0 +1,15 @@
+#include "Problem3a.h"
+
+omniCell::omniCell(){
+  content = 0;
+}
+
+template<class Type>
+omniCell::omniCell(Type inputvalue){
+  content = inputvalue;
+}
+
+template<class Type>
+Type read(){
+  return content;
+}

@@ -1,0 +1,12 @@
+#include "Problem3a.h"
+#include <vector>
+
+using namespace std;
+
+int main(){
+  //The list I am implementing is vector
+  Vec nums;
+  Vec strings;
+
+  return 0;
+}

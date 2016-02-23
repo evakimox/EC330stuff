@@ -1,0 +1,18 @@
+#include "Problem3b.h"
+
+using namespace std;
+
+int main(){
+  omniCell<string> str1("abcd");
+  omniCell<string> str2("ef");
+  omniCell<string> str3("ghijklm");
+  omniList<string> productstr;
+  string strprod;
+  string argument = "nonsense";
+  productstr.write(str1);
+  productstr.write(str2);
+  productstr.write(str3);
+  strprod = productstr.prod(argument);
+  cout<<"string product is: "<<strprod<<'\n';
+  return 0;
+}
