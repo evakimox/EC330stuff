@@ -14,10 +14,12 @@ bool findbydelete(string inputword);
 void SpellCheck(string inputword);
 
 int main(){
-  string myword = "niahao";
+  string myword = "niahnasdiao";
   SpellCheck(myword);
 }
 
+
+//Here starts my useful stuff
 void SpellCheck(string inputword)
 {
   cout<<"Spell checking . . . \n";
@@ -46,7 +48,6 @@ void SpellCheck(string inputword)
 
 
 bool findstring(string inputword){
-  //cout<<"Looking for word itself. . . \n";
   for(int i=0;i<sizedict;i++){
     if(inputword==dict[i]){
       return 1;
@@ -70,7 +71,6 @@ bool findbyreplace(string inputword){
   }
   return found;
 }
-
 bool findbyswap(string inputword){
   cout<<"Check swapping misspelling. . . \n";
   bool found = 0;
@@ -85,7 +85,6 @@ bool findbyswap(string inputword){
   }
   return found;
 }
-
 bool findbyinsert(string inputword){
   cout<<"Check lost letter. . . \n";
   bool found = 0;
