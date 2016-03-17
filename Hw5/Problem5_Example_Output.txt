@@ -1,0 +1,29 @@
+bash-4.1$ g++ -std=c++0x main.cpp HashTable.cpp -o hash
+bash-4.1$ ./hash dictionary.txt
+Spell checking...
+--spelling--
+spelling
+
+--spel--
+seel
+skel
+speal
+spec
+sped
+speel
+spelk
+spell
+spelt
+spet
+spew
+spex
+spiel
+
+--goiing--
+going
+goring
+
+--abcdefghijklmnop--
+no matches found!
+
+bash-4.1$ 
