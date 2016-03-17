@@ -1,0 +1,55 @@
+#ifndef LSorter_hpp
+#define LSorter_hpp
+
+#include <stdio.h>
+#include <iostream>
+#include "LNode.h"
+
+using namespace std;
+
+int index(LNode* head,int ind){
+  LNode* currnode = head;
+  int result;
+  for(int i=0;i<=ind;i++){
+    result = currnode->val;
+    currnode = currnode->next;
+  }
+  return result;
+}
+
+
+void merge(LNode* head){
+  if(index(left,0)<index(right,0)){
+      int temp = theonebeingoverwritten->val;     //tempoarily store the one being changed
+      theonebeingoverwritten->val = index(left,0);
+  }
+    
+
+  
+class LSorter {
+public:
+    LNode* sortList(LNode* head);
+};
+
+LNode* LSorter::sortList(LNode* head){
+  int length=0;
+  int finish=0;
+  LNode* currnode = head;
+  while(1){
+    if(currnode == NULL){
+      break;
+    }
+    length++;
+    currnode = currnode->next;
+  }
+  
+  return head;
+}
+
+#endif /* LSorter_hpp */
+
+
+
+
+
+
