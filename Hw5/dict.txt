@@ -1,0 +1,10 @@
+apple
+orange
+juice
+is
+stupid
+and
+not
+tasty
+at
+all
