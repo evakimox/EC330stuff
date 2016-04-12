@@ -35,29 +35,26 @@ void Graph::distThreeNeighbour(string name){
     for(int i=0;i<elemVertex.size();i++){
       elemVertex[i]->color = 0;
     }
-    //color root black
+
     root->color = 1;
     
     for(int i=0;i<root->neighbourlist.size();i++){
       Vertex* N1 = root->neighbourlist[i];
       output.insert(N1->name);
       // cout<<"Under root: "<<N1->name<<" inserted dist = 1"<<endl;
-      N1->color = 1;
       for(int i2=0;i2<N1->neighbourlist.size();i2++){
 	Vertex* N2 = N1->neighbourlist[i2];
-	if(!(N2->color)){
+      	if(!(N2->color)){
 	  output.insert(N2->name);
 	  //  cout<<"Under Dist1: "<<N2->name<<" INSERTED dist = 2"<<endl;
-	  N2->color = 1;
 	  for(int i3 = 0;i3<N2->neighbourlist.size();i3++){
 	    Vertex* N3 = N2->neighbourlist[i3];
 	    if(!(N3->color)){
 	      output.insert(N3->name);
 	      // cout<<"Under Dist2: "<<N3->name<<" INSERTED dist = 3"<<endl;
-	      N3->color = 1;
 	    }
 	  }//end of dist = 3
-	}// end of if dist2 is unvisited
+       	}// end of if dist2 is unvisited
       }// dist = 2 Vertices end there
     }//end searching through vertices
     
