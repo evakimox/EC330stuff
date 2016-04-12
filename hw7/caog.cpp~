@@ -1,0 +1,39 @@
+
+#include "Graph.h"
+#include <fstream>
+#include <ctype.h>
+
+using namespace std;
+
+int main(){
+  ifstream flightinfo("flights.txt");
+  string word;
+  string previous_word;
+  Graph g;
+  while(flightinfo>>word){
+    if(word.length()==3&&isalpha(word[0])&&isalpha(word[1])&&isalpha(word[2])){
+      g.addelem(word);
+    }
+    else if(word=="\"\""){
+      string name1;
+      string name2;
+      flightinfo>>name1;
+      flightinfo>>name2;
+      g.addedge(g.findelem(name1),g.findelem(name2));
+    }
+  }
+  /*
+  Vertex* V1;
+  V1 = new Vertex("sb");
+  
+  
+  //Vertex V1("shabi");
+  Vertex V2("SB");
+  Edge E1(V1,&V2);
+  cout<<"Name V1: "<<V1->name<<endl;
+  cout<<"Name V2: "<<V2.name<<endl;
+  cout<<"Name V1's neighbour: "<<V1->neighbourlist[0]->name<<endl;
+  cout<<"Name V2's Neighbour: "<<V2.neighbourlist[0]->name<<endl;
+  */
+  return 1;
+}

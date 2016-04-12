@@ -1,10 +1,12 @@
 #include <iostream>
 #include <string>
+#include <set>
 
 using namespace std;
 
 int sizedict = 5;
 string dict[5] = {"nihao","niho","hihao","nnihao","nhiao"};
+set<string> dictionary(dict,dict+5);
 
 bool findstring(string inputword);
 bool findbyreplace(string inputword);
@@ -14,7 +16,7 @@ bool findbydelete(string inputword);
 void SpellCheck(string inputword);
 
 int main(){
-  string myword = "niahnasdiao";
+  string myword = "niao";
   SpellCheck(myword);
 }
 
@@ -48,10 +50,10 @@ void SpellCheck(string inputword)
 
 
 bool findstring(string inputword){
-  for(int i=0;i<sizedict;i++){
-    if(inputword==dict[i]){
-      return 1;
-    }
+  set<string>::iterator it;
+  it=dictionary.find(inputword);
+  if(it!=dictionary.end()){
+    return 1;
   }
   return 0;
 }

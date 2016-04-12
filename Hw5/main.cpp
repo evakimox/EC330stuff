@@ -1,7 +1,7 @@
 #include "HashTable.h"
 using namespace std;
 
-int main(int argc, const char * argv[]) {
+int main(int argc, const char * argv[]){
     if (argc <= 1)
     {
         cout << "Please supply a file name for the dictionary as input" << endl;
@@ -12,10 +12,11 @@ int main(int argc, const char * argv[]) {
     
     cout << "Spell checking...\n";
     
-    hashTable->SpellCheck("spelling");
+    hashTable->SpellCheck("Spelling");
     hashTable->SpellCheck("spel");
     hashTable->SpellCheck("goiing");
     hashTable->SpellCheck("abcdefghijklmnop");
 
     return 0;
 }
+

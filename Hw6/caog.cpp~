@@ -1,0 +1,103 @@
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <stdlib.h>
+
+using namespace std;
+
+bool LenGreater8(string word);
+bool LenEq8(string word);
+
+void fourA(){
+  ifstream bigData("smallData.txt");
+  string word;
+  char letter;
+  int sum = 0;
+  int count = 0;
+  while(bigData>>letter){
+    if(letter == 'U'){
+      bigData>>word;
+      if(word.length()>8){
+	//length>8 check method
+	sum+=LenGreater8(word);
+      }
+      else if(word.length()==8){
+	//length = 8 check method
+	sum+=LenEq8(word);
+      }
+      else{
+	//not enough digits
+      }
+    }//end Start with letter U
+  }//end searching the bigData
+  cout<<sum<<endl;
+}
+
+void fourB(){
+  int count = 0;
+  ifstream bigData("smallData.txt");
+  ifstream dict("smalldictionary.txt");
+  //go through the dictionary find the longest word length
+  string myword;
+  //inside the string, insert char by char (only ascii between A and z)
+  //insert the char until the largest length and then -- the largest length
+  //if meet non-letter character, record the inserted num as largest length
+  //search for the inserted string in dictionary set if found ++ to count
+}
+
+bool LenEq8(string word){
+  bool isID;
+  int sum = 0;
+  for(int i=0;i<8;i++){//do things that check if all char inside is numerical
+    char thisletter = word[i];
+    int thisletternum = (int)thisletter-48;//turn it back from ascii
+    if(thisletternum>9||thisletternum<0){
+      //this is some character, not BUID
+      return 0;
+    }
+    else{
+      sum+=thisletternum;
+      if(sum>28){
+	isID = 1;
+      }
+    }	      
+  }//end of for loop that check if inside this word
+  return isID;
+}
+
+
+bool LenGreater8(string word){
+  bool isID = 0;
+  int sum = 0;
+  if(word[8]=='0'||word[8]=='1'||word[8]=='2'||word[8]=='3'||
+     word[8]=='4'||word[8]=='5'||word[8]=='6'||
+     word[8]=='7'||word[8]=='8'||word[8]=='9'){ //this is definitly not BUID
+    return 0;
+  }//length >8 followed by number
+  
+  else{//length>8 followed by non-numerical character
+    for(int i=0;i<8;i++){//do things that check if all char inside is numerical
+      char thisletter = word[i];
+      int thisletternum = (int)thisletter-48;
+      if(thisletternum>9||thisletternum<0){
+	//this is some character, not BUID
+	return 0;
+      }
+      else{
+	sum+=thisletternum;
+	if(sum>28){
+	  isID = 1;
+	}
+      }	      
+    }//end of for loop that check if inside this word
+  }//if length>8 followed by non-number
+  return isID;
+}//if length>8 all cases
+
+
+
+int main(){
+  fourA();
+  return 0;
+}
+
