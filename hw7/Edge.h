@@ -18,7 +18,7 @@ Edge::Edge(Vertex* inVertex1, Vertex* inVertex2){
   V2 = inVertex2;
   V1->addneighbour(V2);
   V2->addneighbour(V1);
-  cout<<"edge containing "<<V1->name<<" and "<<V2->name<<" constructed"<<endl;
+  //  cout<<"edge containing "<<V1->name<<" and "<<V2->name<<" constructed"<<endl;
 }
 
 #endif

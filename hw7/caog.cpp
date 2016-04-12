@@ -5,8 +5,9 @@
 
 using namespace std;
 
-int main(){
-  ifstream flightinfo("flights.txt");
+int main(int argc, char *argv[]){
+  string filename = string(argv[1]);
+  ifstream flightinfo(filename);
   string word;
   string previous_word;
   Graph g;
@@ -22,5 +23,11 @@ int main(){
       g.addedge(g.findelem(name1),g.findelem(name2));
     }
   }
+  // graph constructed
+  string root = string(argv[2]);
+  cout<<"Distance within 3: "<<endl;
+  g.distThreeNeighbour(root);
+
+  
   return 1;
 }

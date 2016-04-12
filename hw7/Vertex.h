@@ -20,7 +20,7 @@ class Vertex{
 
 Vertex::Vertex(string inputname){
   name = inputname;
-  cout<<"Vetex "<<name<<" constructed"<<endl;
+  //  cout<<"Vetex "<<name<<" constructed"<<endl;
 }
 
 void Vertex::addneighbour(Vertex* neighbourVertex){
